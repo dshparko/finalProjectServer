@@ -3,10 +3,15 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const passport = require("passport");
+
+
 app.use(
-    cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
+    cookieSession({ name: "session", keys: ["dshparko"], maxAge: 24 * 60 * 60 * 100 })
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(
     cors({
