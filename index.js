@@ -1,11 +1,11 @@
 const cookieSession = require("cookie-session");
 const express = require("express");
 const cors = require("cors");
-const passportSetup = require("./passport");
+const mongoose = require('mongoose');
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
-
+const config = require('config');
 app.use(
     cookieSession({ name: "session", keys: ["dshparko"], maxAge: 24 * 60 * 60 * 100 })
 );
@@ -23,6 +23,28 @@ app.use(
 
 app.use("/auth", authRoute);
 
+//
+// const start = async () => {
+//     try {
+//         mongoose.set('strictQuery', true);
+//         mongoose.connect(config.get('bdUrl'), {
+//             useNewUrlParser:true,
+//             useUnifiedTopology:true
+//         })
+//
+//
+//
+//
+//         app.listen(5000, () => {
+//             console.log('Server is running on port', 5000);
+//             console.log(`http://localhost:5000`);
+//         })
+//     } catch (error) {
+//
+//     }
+// }
+//
+// start();
 app.listen("5000", () => {
     console.log("Server is running!");
 });
