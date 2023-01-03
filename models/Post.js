@@ -7,7 +7,7 @@ const Post = new Schema({
 
     text: {type: String, required: true },
 
-    teg: {type: String, required: true },
+    teg: {type: Array, required: true },
 
     group: {type: String, required: true },
 
