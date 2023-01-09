@@ -14,12 +14,12 @@ router.post('/send',
                 return res.status(400).json({message: "Uncorrect request", errors})
             }
             const {
-                reviewTitle, workTitle, text, teg, group, starCount
+                userName, time, reviewTitle, workTitle, text, teg, group, starCount, imgUrl
             }          = req.body
 
 
 
-            const message = new Post({ reviewTitle, workTitle, text, teg, group, starCount})
+            const message = new Post({workStars,userName, time, reviewTitle, workTitle, text, teg, group, starCount,imgUrl})
             await message.save()
             res.json({message: "Message sent"})
         } catch (e) {
