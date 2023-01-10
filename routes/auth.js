@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const CLIENT_URL = "https://final-project-client-itra-cvbgp80wg-dshparko.vercel.app/";
+const CLIENT_URL = "https://https://final-project-client-itra.vercel.app/";
 
 
 const {validationResult} = require("express-validator")
